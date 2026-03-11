@@ -55,7 +55,7 @@ export default function MapSearch() {
             process.env.NEXT_PUBLIC_MAPBOX_TOKEN
           }&session_token=${
             process.env.NEXT_PUBLIC_MAPBOX_SESSION_TOKEN
-          }&country=US&limit=5&proximity=-122.4194,37.7749`
+          }`
         );
 
         const data = await res.json();
@@ -142,13 +142,13 @@ export default function MapSearch() {
               className="flex-1"
             />
             {displayValue && !isSearching && (
-              <X
+              <XingIcon
                 className="size-4 shrink-0 text-muted-foreground cursor-pointer hover:text-foreground transition-colors"
                 onClick={clearSearch}
               />
             )}
             {isSearching && (
-              <Loader2 className="size-4 shrink-0 text-primary animate-spin" />
+              <Loading01Icon className="size-4 shrink-0 text-primary animate-spin" />
             )}
           </div>
 
@@ -177,7 +177,7 @@ export default function MapSearch() {
                           {location.maki && iconMap[location.maki] ? (
                             iconMap[location.maki]
                           ) : (
-                            <MapPin className="h-4 w-4 text-primary" />
+                            <MapPinIcon className="h-4 w-4 text-primary" />
                           )}
                         </div>
                         <div className="flex flex-col">
